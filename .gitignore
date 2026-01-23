@@ -1,0 +1,16 @@
+# Object files
+*.obj
+
+# Linker output
+*.map
+
+# Executables
+*.exe
+*.bat
+
+# Borland debug and config files
+*.td
+*.tr
+
+# Build number
+*.num
