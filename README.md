@@ -25,10 +25,6 @@ this project is my pretext to learn it.
 The program is portable. No installation is needed. Just copy the `PCWO2.EXE` 
 file and run it from the command line. Follow the instructions.
 
-## Binary
-Use the following [link](https://homerotl.com/downloads/pcwo2/PCWO2-20231026.1.zip) to download the 
-latest public build of this program. 
-
 ## Compiling PCWO2
 Currently, I am using Borland's Turbo Assembler (TASM) Version 4.0. Once 
 TASM is installed and configured on your path, simply download the source code
