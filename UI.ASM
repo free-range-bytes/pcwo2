@@ -1,7 +1,6 @@
 ; UI.ASM
 ;
 ; User interface routines for PCWO2
-; Author: Homero Trevino <homerotl@gmail.com>
 
 .MODEL small
 
@@ -14,17 +13,16 @@
     	
 ; Color schema
 
-	BACKGROUND_STYLE		EQU 07h ; White text over Black background
+	BACKGROUND_STYLE		EQU 07h  ; White text over Black background
 	TITLE_STYLE				EQU 0B5h ; Violet text over Intense cyan background
-	LABEL_STYLE				EQU 05h ; Violet text over Black background
-	DYN_INFO_STYLE			EQU 07h ; White text over Black background
-	MENU_OPTION_STYLE_EN	EQU 0Dh ; Intense violet text over Black background
-	MENU_OPTION_STYLE_DI	EQU 05h ; Violet text over Black background
-	STATUS_STYLE			EQU 0Fh ; Intense white text over Black background
+	LABEL_STYLE				EQU 05h  ; Violet text over Black background
+	DYN_INFO_STYLE			EQU 07h  ; White text over Black background
+	MENU_OPTION_STYLE_EN	EQU 0Dh  ; Intense violet text over Black background
+	MENU_OPTION_STYLE_DI	EQU 05h  ; Violet text over Black background
+	STATUS_STYLE			EQU 0Fh  ; Intense white text over Black background
 
 	
 ; Text layout
-
     STATUS_COL 				EQU 0ch
     STATUS_ROW				EQU 16h
     PROMPT_COL				EQU 0ch
@@ -40,7 +38,6 @@
     CPU_BENCH_RESULT_ROW	EQU 0ch
     CPU_BENCH_RESULT_VA_COL	EQU 0eh
 
-	
     DRIVE_TEST_COL			EQU 03h
     DRIVE_ID_COL			EQU 0bh
     DRIVE_MEDIA_COL			EQU 1eh
@@ -108,7 +105,7 @@
    	
 								;     X,   Y, Attribute  , String
    	StaticLabels				db	01h, 01h, TITLE_STYLE,	'PC Workout v2', 0
-   								db	3eh, 01,  TITLE_STYLE,	'by Homero Trevino', 0
+   								db	39h, 01h, TITLE_STYLE,	'Free Range Bytes, LLC', 0
    								db	01h, 03h, LABEL_STYLE,	'Information', 0
    								db	01h, 04h, LABEL_STYLE,	'CPU', 0
    								db	13h, 04h, LABEL_STYLE,	'FPU', 0						
@@ -249,7 +246,7 @@ _UI_SET_STATUS PROC
     call _STR_STR_LEN                   ; get string length on cx
     mov ax,COLUMNS                      ; x = (80 - cx) / 2
     sub ax,cx
-    shr ax,1                            ; divde by 2
+    shr ax,1                            ; divide by 2
 	mov _SCRN_Attribute,STATUS_STYLE	
 	mov _SCRN_Position_X,al
 	mov _SCRN_Position_Y,STATUS_ROW
@@ -273,7 +270,7 @@ _UI_SET_PROMPT PROC
     call _STR_STR_LEN                   ; get string length on cx
     mov ax,COLUMNS                      ; x = (80 - cx) / 2
     sub ax,cx
-    shr ax,1                            ; divde by 2
+    shr ax,1                            ; divide by 2
 	mov _SCRN_Attribute,STATUS_STYLE	
 	mov _SCRN_Position_X,al
 	mov _SCRN_Position_Y,PROMPT_ROW
@@ -570,11 +567,11 @@ _UI_DISPLAY_MENU PROC
 	call RENDER_BUTTONS
 	
 	; TODO: Remove from here
-	call _WINDOW_SETUP
-	call _WINDOW_SHOW
+	; call _WINDOW_SETUP
+	; call _WINDOW_SHOW
 	
-	lea si,HelloWorldMsg
-	call _WINDOW_WRITELN
+	; lea si,HelloWorldMsg
+	; call _WINDOW_WRITELN
 	
 	ret
 _UI_DISPLAY_MENU ENDP

@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"Autorun",
+			"Borland's",
+			"COMMLN",
+			"CPUID",
+			"ENDP",
+			"EXTRN",
+			"Homero",
+			"masm",
+			"OSCREEN",
+			"PCSPKR",
+			"PCST",
+			"PCWO",
+			"PROCNAME",
+			"retriable",
+			"SCRN",
+			"tasm",
+			"tlink",
+			"WRITELN"
+		]
+	}
+}

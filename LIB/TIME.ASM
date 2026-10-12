@@ -1,7 +1,6 @@
 ; TIME.ASM
 ;
 ; Libraries for handling time and timing related tasks
-; Author: Homero Trevino <homerotl@gmail.com>
 
 .MODEL small
 

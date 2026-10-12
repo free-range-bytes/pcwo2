@@ -1,6 +1,5 @@
 ; STRINGS.ASM
 ; Source for string related procedures
-; Author: Homero Trevino <homerotl@gmail.com>
 
 .MODEL small
 

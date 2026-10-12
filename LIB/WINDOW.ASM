@@ -2,7 +2,6 @@
 ;
 ; Library to allow a text window which is resizable, movable
 ; scrollable and can be shown and hidden dynamically.
-; Author: Homero Trevino <homerotl@gmail.com>
 
 .MODEL small
 	

@@ -1,6 +1,5 @@
 ; DISK_IO.ASM
 ; Source for Disk I/O Procedures, mostly INT 13h calls
-; Author: Homero Trevino <homerotl@gmail.com>
 
 .MODEL small
 

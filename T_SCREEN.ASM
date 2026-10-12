@@ -1,6 +1,5 @@
 ; T_SCREEN.ASM
 ; Tests for the screen
-; Author: Homero Trevino <homerotl@gmail.com>
 .MODEL small
 	
 .DATA
@@ -52,11 +51,11 @@ DrawFullLine:
 	loop DrawFullLine
 
 	mov cx,130h                            ; 19x16=288 130h	
-DrawOnluColumns:
+DrawOnlyColumns:
 	mov es:[di],ah                         ; draw pixel
 	add di,14h                             ; DI = DI+20
 	mov es:[di],ah                         ; draw pixel
-	loop DrawOnluColumns
+	loop DrawOnlyColumns
 
 	inc bh                                 ; increase the count of times we will do the pattern
 	cmp bh,0ah                             ; Do it 10 (0Ah) times
@@ -71,10 +70,10 @@ DrawLastLine:
 
 	mov cx,00c8h                           ; Do it 200 times
 	mov di,013Fh                           ; Top right corner
-DarwRightLastLine:
+DrawRightLastLine:
 	mov es:[di],ah                         ; draw pixel
 	add di,140h                            ; +320
-	loop DarwRightLastLine
+	loop DrawRightLastLine
 	
 	call _KB_WAIT_ANY_KEY
 	

@@ -1,6 +1,5 @@
 ; T_PCSPKR.ASM
 ; Source for the PC Speaker test
-; Author: Homero Trevino <homerotl@gmail.com>
 .MODEL small
 
 .DATA
@@ -64,7 +63,7 @@
     ; Stored in reverse order from least significant to most significant
     ; [  ls   ] [  ms  ]
     ; [ls] [ms] [ls][ms]
-    NoteTypesPITCliks db 0d8h, 95h, 02h, 00h
+    NoteTypesPITClicks db 0d8h, 95h, 02h, 00h
 		db 1ah, 0dch, 03h, 00h
 		db 06h, 27h, 05h, 00h
 		db 0deh, 0bch, 07h, 00h
@@ -203,7 +202,7 @@ _T_PCST_PlayNote:
 	; Lookup note type in NoteTypes for duration
 	mov bl,04h
 	mul bl									; (offset) ax = code * 04h
-	lea si,NoteTypesPITCliks	
+	lea si,NoteTypesPITClicks	
 	add si,ax								; si = si + offset
 
 	mov dx,[si]
@@ -278,7 +277,7 @@ _T_PCST_Rest:
 	; Lookup note type in NoteTypes for duration
 	mov bl,04h
 	mul bl									; (offset) ax = code * 04h
-	lea si,NoteTypesPITCliks	
+	lea si,NoteTypesPITClicks	
 	add si,ax								; si = si + offset
 
 	mov dx,[si]								; Load CX:DX with the note duration

@@ -3,9 +3,8 @@
 ; Description: Main program for PC Workout - This small program is designed to 
 ; run multiple computer functions to ensure all aspects of the computer are 
 ; working as expected
-;
-; Author: Homero Trevino <homerotl@gmail.com>
-    
+;    
+
 .MODEL small
 
     F2_KEY_SCAN_CODE                EQU 3ch
@@ -119,7 +118,7 @@ dis_loop:
     call _KB_FLUSH_BUFFER                       ; Flush KB buffer
         
     call _KB_READ_KEY                           ; Read a character into ax
-    or ah,ah                                    ; ax = -1 if no charcter read, 1 for
+    or ah,ah                                    ; ax = -1 if no character read, 1 for
                                                 ; extended code
     js dis_loop
     jnz dis_special_key

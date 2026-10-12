@@ -5,7 +5,7 @@
 ;
 ; I am adding my own comments as well. To distinguish the
 ; original file comments from the new ones I am using an 
-; asterisk as the begining -Homero
+; asterisk as the begining
 
 ; START OF ORIGINAL INTEL COMMENTS ->
 ; 

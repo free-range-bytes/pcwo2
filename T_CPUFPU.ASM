@@ -1,7 +1,6 @@
 ; T_CPU_FPU.ASM
 ;
 ; Routines for CPU and FPU identification and testing
-; Author: Homero Trevino <homerotl@gmail.com>
 
 .MODEL small
 

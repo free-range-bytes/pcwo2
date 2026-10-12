@@ -1,6 +1,5 @@
 ; KB.ASM
-; Source for keyboard realted procedures
-; Author: Homero Trevino
+; Source for keyboard related procedures
 
 .MODEL small
 

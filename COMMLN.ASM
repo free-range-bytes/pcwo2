@@ -1,6 +1,5 @@
 ; COMMLN.ASM
 ; Handle parsing of parameters in the command line
-; Author: Homero Trevino <homerotl@gmail.com>
 
 .MODEL small
 

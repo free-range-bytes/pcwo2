@@ -1,6 +1,5 @@
 ; SCREEN.ASM
 ; Operations affecting the screen like text mode changes and other routines
-; Author: Homero Trevino <homerotl@gmail.com>
 .MODEL small
 	
 	M80x25_BYTE_COUNT			EQU 0fa0h		; 80x2x25 = 4000 = 0fa0h 	

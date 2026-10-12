@@ -1,6 +1,5 @@
 ; T_FLOPPY.ASM
 ; Source for the Floppy drive tests
-; Author: Homero Trevino <homerotl@gmail.com>
 .MODEL small
 
 	MAX_RETRIES EQU 4	
@@ -91,7 +90,7 @@ _TEST_FLOPPY PROC
     call _UI_SET_STATUS
     
 	call _DIO_GET_NUMBER_OF_FD			; Check number of floppy drives,
-										; retuns DIONumberOfDisks
+										; returns DIONumberOfDisks
     call _UI_CLEAR_STATUS
     
     mov bl,_DIO_NumberOfDisks
@@ -205,11 +204,11 @@ _TEST_FLOPPY ENDP
 ; Prompt the use to insert a floppy disk on drive A and test it
 ; Assumes 2 side, assumes 512 bytes per sector/track
 ; Inputs:
-;	- dl = drive to use (Flopies 0 = a:, 1 = b:,)
+;	- dl = drive to use (Floppies 0 = a:, 1 = b:,)
 ;   - SectorsToRead is a byte in the data segment to indicate the number of sectors to read
 ;	- CylindersToRead is a byte in the data segment to indicate the number of tracks/cylinders to read
 ; Output: 
-;	- ReadTestStatus will contain a byte wuth the decimal value
+;	- ReadTestStatus will contain a byte with the decimal value
 ;       - 0 if the test was successful
 ;       - 1 if the test was incomplete (aborted)
 ;       - 255 if the test ended in error

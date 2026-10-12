@@ -1,7 +1,6 @@
 ; MATH.ASM
 ;
 ; Math and math related procedures
-; Author: Homero Trevino <homerotl@gmail.com>
 .MODEL small
 
 .DATA
