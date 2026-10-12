@@ -6,16 +6,16 @@
 
 .DATA
 
-	EXTRN _cpu_type:BYTE						; From LIB/CPUID3A.ASM
+	EXTRN _cpu_type:BYTE						; From src/lib/cpuid3a.asm
 	EXTRN _fpu_type:BYTE
 	EXTRN _cpuid_flag:BYTE
 	
-	EXTRN _PRIME_N:WORD							; From LIB/MATH.ASM
+	EXTRN _PRIME_N:WORD							; From src/lib/math.asm
 	EXTRN _PRIME_NSQ:WORD
 
-	EXTRN _IntToStringBuffer:BYTE				; FROM LIB/STRINGS.ASM
+	EXTRN _IntToStringBuffer:BYTE				; FROM src/lib/strings.asm
 	
-	EXTRN _TimerTimeLapse:BYTE					; From LIB/TIME.ASM
+	EXTRN _TimerTimeLapse:BYTE					; From src/lib/time.asm
 	EXTRN _TimerTimerExpired:BYTE
 	
 	CPUIDNameTable				db 0, '8086/8088 ', 0
@@ -41,10 +41,10 @@
 	.8086
 	JUMPS
 	
-	EXTRN _get_cpu_type:PROC					; From LIB/CPUID3A.ASM
+	EXTRN _get_cpu_type:PROC					; From src/lib/cpuid3a.asm
 	EXTRN _get_fpu_type:PROC
 
-    EXTRN _STR_INT_TO_STRING:PROC				; From LIB/STRINGS
+    EXTRN _STR_INT_TO_STRING:PROC				; From src/lib/strings
 
     EXTRN _UI_PRINT_CPU_ID:PROC					; FROM UI.ASM
     EXTRN _UI_PRINT_FPU_ID:PROC
@@ -53,14 +53,14 @@
    	EXTRN _UI_CLEAR_STATUS:PROC
    	EXTRN _UI_DISPLAY_PRESS_ANY_KEY:PROC
    	        
-    EXTRN _TIME_SETUP_PIT:PROC					; FROM LIB/TIME.ASM
+    EXTRN _TIME_SETUP_PIT:PROC					; FROM src/lib/time.asm
     EXTRN _TIME_START_TIMER:PROC
     EXTRN _TIME_HAS_TIMER_EXPIRED:PROC
 
-	EXTRN _MATH_PRIME_SIEVE:PROC				; FROM LIB/MATH.ASM
+	EXTRN _MATH_PRIME_SIEVE:PROC				; FROM src/lib/math.asm
 	EXTRN _MATH_PRIME_COUNT:PROC
 
-	EXTRN _KB_WAIT_ANY_KEY:PROC                 ; From LIB/KB.ASM
+	EXTRN _KB_WAIT_ANY_KEY:PROC                 ; From src/lib/kb.asm
 	
 ;----
 ; _TEST_CPU_FPU_DETECTION

@@ -49,7 +49,7 @@
         
 .DATA
 	
-    EXTRN _SCRN_VideoMode:BYTE					; From LIB/SCREEN.ASM
+    EXTRN _SCRN_VideoMode:BYTE					; From src/lib/screen.asm
 	EXTRN _SCRN_Attribute:BYTE		
 	EXTRN _SCRN_Position_X:BYTE
 	EXTRN _SCRN_Position_Y:BYTE
@@ -124,8 +124,8 @@
 	.8086
 	JUMPS
 
-    EXTRN _KB_ENTER_ESC_Q:PROC                      ; From LIB/KB.ASM    
-	EXTRN _SCRN_PRINT_TEXT:PROC                     ; From LIB/SCREEN.ASM
+    EXTRN _KB_ENTER_ESC_Q:PROC                      ; From src/lib/kb.asm    
+	EXTRN _SCRN_PRINT_TEXT:PROC                     ; From src/lib/screen.asm
 	EXTRN _SCRN_SET_VIDEO_MODE:PROC				
 	EXTRN _SCRN_SET_BACKGROUND:PROC
 	EXTRN _SCRN_DISABLE_CURSOR:PROC
@@ -134,8 +134,8 @@
 	EXTRN _SCRN_PRINT_CHAR:PROC
 	EXTRN _SCRN_SAVE_OSCREEN:PROC
 	EXTRN _SCRN_RESTORE_OSCREEN:PROC
-	EXTRN _STR_STR_LEN:PROC                         ; From LIB/STRINGS.ASM
-	EXTRN _WINDOW_SETUP:PROC                        ; From LIB/WINDOW.ASM
+	EXTRN _STR_STR_LEN:PROC                         ; From src/lib/strings.asm
+	EXTRN _WINDOW_SETUP:PROC                        ; From src/lib/window.asm
 	EXTRN _WINDOW_SHOW:PROC
 	EXTRN _WINDOW_WRITELN:PROC
 	

@@ -1,1 +1,1 @@
-pcwo2 commln ui t_cpufpu t_screen t_pcspkr t_floppy lib\screen lib\kb lib\cpuid3a lib\disk_io lib\strings lib\time lib\math lib\window
+obj\pcwo2 obj\commln obj\ui obj\t_cpufpu obj\t_screen obj\t_pcspkr obj\t_floppy obj\screen obj\kb obj\cpuid3a obj\disk_io obj\strings obj\time obj\math obj\window, pcwo2.exe, pcwo2.map

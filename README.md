@@ -26,11 +26,10 @@ The program is portable. No installation is needed. Just copy the `PCWO2.EXE`
 file and run it from the command line. Follow the instructions.
 
 ## Compiling PCWO2
-Currently, I am using Borland's Turbo Assembler (TASM) Version 4.0. Once 
-TASM is installed and configured on your path, simply download the source code
-to your local dirive, open a command line, go to the directory where the source
-code is and type `make`. This should generate the executable
-file `PCWO2.EXE`
+Currently, I am using Borland's Turbo Assembler (TASM) Version 4.0. Sources
+are in `src` and `src/lib`. Once TASM is installed and configured on your path,
+open a command line in the project root and type `make`. Object files are
+written to `obj`, and the executable `PCWO2.EXE` is written to the project root.
 
 ## Future Test ideas
 

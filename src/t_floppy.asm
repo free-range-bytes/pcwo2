@@ -14,7 +14,7 @@
   	EXTRN _UI_Drive_Index:BYTE       ; From UI.ASM
 	EXTRN _UI_Progress_FDT:BYTE
 	EXTRN _UI_Enter_Esc_Diag_Resp:BYTE
-	EXTRN _NumToAsciiB:BYTE			 ; From LIB/STRINGS.ASM
+	EXTRN _NumToAsciiB:BYTE			 ; From src/lib/strings.asm
 	
 	StatusEnumDrivesMsg	db 'Counting drives...', 0 		
 	StatusDetDrTypeMsg  db 'Detect drive type...', 0 
@@ -53,9 +53,9 @@
     .8086
 	JUMPS
 
-	EXTRN _STR_CHAR_TO_STRING:PROC				 	 ; From LIB/STRINGS.ASM	
+	EXTRN _STR_CHAR_TO_STRING:PROC				 	 ; From src/lib/strings.asm	
 	EXTRN _STR_PROGRESS_CALC:PROC
-	EXTRN _DIO_READ_SECTOR:PROC                      ; From LIB/DISK_IO.ASM
+	EXTRN _DIO_READ_SECTOR:PROC                      ; From src/lib/disk_io.asm
 	EXTRN _DIO_RESET_DISK_SYSTEM:PROC	
 	EXTRN _DIO_INT13H_ERROR_IS_SYS_RETRIABLE:PROC
 	EXTRN _DIO_INT13H_ERROR_IS_USER_RETRIABLE:PROC
@@ -73,7 +73,7 @@
 	EXTRN _UI_PROMPT_INSERT_MEDIA:PROC
 	EXTRN _UI_CLEAR_PROMPT:PROC
     EXTRN _UI_DISPLAY_PRESS_ANY_KEY:PROC
-	EXTRN _KB_YES_NO_Q:PROC							; From LIB/KB.ASM
+	EXTRN _KB_YES_NO_Q:PROC							; From src/lib/kb.asm
 	EXTRN _KB_WAIT_ANY_KEY:PROC
 
 ;----

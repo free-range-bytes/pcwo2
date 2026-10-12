@@ -4,14 +4,14 @@
 	
 .DATA
 
-	EXTRN _SCRN_VideoMode:BYTE             ; From LIB/SCREEN.ASM
+	EXTRN _SCRN_VideoMode:BYTE             ; From src/lib/screen.asm
 	
 .CODE
 	.8086
 	JUMPS
 	
 	EXTRN _KB_WAIT_ANY_KEY:PROC            ; From KB.ASM
-	EXTRN _SCRN_SET_VIDEO_MODE:PROC        ; From LIB/SCREEN.ASM
+	EXTRN _SCRN_SET_VIDEO_MODE:PROC        ; From src/lib/screen.asm
 
 ;----
 ; _SCREEN_GEOMETRY_TEST

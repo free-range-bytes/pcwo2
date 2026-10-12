@@ -17,7 +17,7 @@
 
 .DATA
 
-	EXTRN _SCRN_VideoMode:BYTE                  ; From LIB/SCREEN.ASM
+	EXTRN _SCRN_VideoMode:BYTE                  ; From src/lib/screen.asm
 	
     EXTRN _CommandLineErrorFlag:BYTE            ; From COMMLN.ASM
 
@@ -54,7 +54,7 @@
     EXTRN _TEST_PC_SPEAKER:PROC                 ; From T_SPEAKER.ASM 
     EXTRN _SCREEN_GEOMETRY_TEST:PROC            ; From T_SCREEN.ASM 
         
-    EXTRN _SCRN_SET_VIDEO_MODE:PROC             ; From LIB/SCREEN.ASM
+    EXTRN _SCRN_SET_VIDEO_MODE:PROC             ; From src/lib/screen.asm
 	EXTRN _SCRN_DISABLE_CURSOR:PROC
 	EXTRN _SCRN_DISABLE_BLINKING_TEXT:PROC
 	EXTRN _SCRN_SAVE_UI_SCR:PROC
@@ -65,7 +65,7 @@
     EXTRN _TEST_CPU_FPU_DETECTION:PROC          ; From T_CPU_FPU.ASM
     EXTRN _TEST_BENCHMARK_CPU:PROC
 
-    EXTRN _KB_READ_KEY:PROC                     ; From LIB/KB.ASM
+    EXTRN _KB_READ_KEY:PROC                     ; From src/lib/kb.asm
     EXTRN _KB_FLUSH_BUFFER:PROC
 
 MAIN PROC                                       ; Main program

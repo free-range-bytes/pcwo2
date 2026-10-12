@@ -2,50 +2,57 @@
 # This makefile assumes you are using Borland's Turbo Assembler.
 # If that is not the case, you will need to change the tasm and tlink lines to masm and link
 #
-pcwo2.exe: pcwo2.obj commln.obj ui.obj t_cpufpu.obj t_screen.obj  t_pcspkr.obj t_floppy.obj lib\kb.obj lib\screen.obj lib\cpuid3a.obj lib\disk_io.obj lib\strings.obj lib\time.obj lib\math.obj lib\window.obj
-	tlink /3 /l /m /s /v @RESPFILE
-	
-pcwo2.obj:			pcwo2.asm
-	tasm pcwo2;
+# Sources live in src and src\lib. Objects are written to obj.
+# PCWO2.EXE is written to the project root.
+#
+pcwo2.exe: obj\pcwo2.obj obj\commln.obj obj\ui.obj obj\t_cpufpu.obj obj\t_screen.obj obj\t_pcspkr.obj obj\t_floppy.obj obj\screen.obj obj\kb.obj obj\cpuid3a.obj obj\disk_io.obj obj\strings.obj obj\time.obj obj\math.obj obj\window.obj
+	tlink /3 /l /m /s /v @respfile
 
-commln.obj:			commln.asm
-	tasm commln;
-    
-ui.obj:             ui.asm version.inc
-	tasm ui;
-	
-t_screen.obj:       t_screen.asm
-    tasm t_screen;
+obj\dir.tag:
+	if not exist obj mkdir obj
+	echo ok> obj\dir.tag
 
-t_pcspkr.obj:       t_pcspkr.asm
-	tasm t_pcspkr;
+obj\pcwo2.obj:		obj\dir.tag src\pcwo2.asm
+	tasm src\pcwo2.asm,obj\pcwo2.obj;
 
-t_floppy.obj:       t_floppy.asm
-	tasm t_floppy;
-	
-t_cpufpu.obj:      t_cpufpu.asm
-    tasm t_cpufpu;
+obj\commln.obj:		obj\dir.tag src\commln.asm
+	tasm src\commln.asm,obj\commln.obj;
 
-lib\kb.obj:			lib\kb.asm
-	tasm lib\kb lib\kb.obj;
+obj\ui.obj:			obj\dir.tag src\ui.asm src\version.inc
+	tasm /isrc src\ui.asm,obj\ui.obj;
 
-lib\screen.obj:		lib\screen.asm
-	tasm lib\screen lib\screen.obj;
-	
-lib\cpuid3a.obj:	lib\cpuid3a.asm
-	tasm lib\cpuid3a lib\cpuid3a.obj;
-	
-lib\disk_io.obj:	lib\disk_io.asm
-	tasm lib\disk_io lib\disk_io.obj;
+obj\t_screen.obj:	obj\dir.tag src\t_screen.asm
+	tasm src\t_screen.asm,obj\t_screen.obj;
 
-lib\strings.obj:	lib\strings.asm
-	tasm lib\strings lib\strings.obj;
-	
-lib\time.obj:	lib\time.asm
-	tasm lib\time lib\time.obj;
+obj\t_pcspkr.obj:	obj\dir.tag src\t_pcspkr.asm
+	tasm src\t_pcspkr.asm,obj\t_pcspkr.obj;
 
-lib\math.obj:	lib\math.asm
-	tasm lib\math lib\math.obj;
-	
-lib\window.obj:	lib\window.asm
-	tasm lib\window lib\window.obj;
+obj\t_floppy.obj:	obj\dir.tag src\t_floppy.asm
+	tasm src\t_floppy.asm,obj\t_floppy.obj;
+
+obj\t_cpufpu.obj:	obj\dir.tag src\t_cpufpu.asm
+	tasm src\t_cpufpu.asm,obj\t_cpufpu.obj;
+
+obj\kb.obj:			obj\dir.tag src\lib\kb.asm
+	tasm src\lib\kb.asm,obj\kb.obj;
+
+obj\screen.obj:		obj\dir.tag src\lib\screen.asm
+	tasm src\lib\screen.asm,obj\screen.obj;
+
+obj\cpuid3a.obj:	obj\dir.tag src\lib\cpuid3a.asm
+	tasm src\lib\cpuid3a.asm,obj\cpuid3a.obj;
+
+obj\disk_io.obj:	obj\dir.tag src\lib\disk_io.asm
+	tasm src\lib\disk_io.asm,obj\disk_io.obj;
+
+obj\strings.obj:	obj\dir.tag src\lib\strings.asm
+	tasm src\lib\strings.asm,obj\strings.obj;
+
+obj\time.obj:		obj\dir.tag src\lib\time.asm
+	tasm src\lib\time.asm,obj\time.obj;
+
+obj\math.obj:		obj\dir.tag src\lib\math.asm
+	tasm src\lib\math.asm,obj\math.obj;
+
+obj\window.obj:		obj\dir.tag src\lib\window.asm
+	tasm src\lib\window.asm,obj\window.obj;
